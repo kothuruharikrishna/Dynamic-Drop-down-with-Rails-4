@@ -1,0 +1,16 @@
+<h1>New User </h1>
+<%= form_for @user do |f| %>
+  <p>name: <%= f.text_field :name %> </p>
+
+  <p>Country:</p>
+    <%= f.collection_select(:country_id,   @countries,  :id, :name, {:prompt   => "Select a Country"}, {:id => 'country_select'}) %>
+  <p>State:</p>
+    <%= f.collection_select(:state_id, @states, :id, :name, {:prompt   => "Select an State"}, {:id => 'state_select'}) %>
+
+  <p>City:</p>
+    <%= f.collection_select(:city_id, @cities, :id, :name, {:prompt   => "Select an City"}, {:id => 'city_select'}) %><br/>
+    <%= f.submit "Sbmit" %>
+  
+<%end%>
+
+    
